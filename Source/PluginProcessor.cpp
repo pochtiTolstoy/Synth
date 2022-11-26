@@ -151,6 +151,7 @@ void TapSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         if (auto voice = dynamic_cast<juce::SynthesiserVoice*>(synth.getVoice(i)))
         {
             //controllers
+
         }
     }
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
