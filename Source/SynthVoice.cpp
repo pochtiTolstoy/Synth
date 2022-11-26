@@ -9,6 +9,7 @@
 */
 
 #include "SynthVoice.h"
+
 bool SynthVoice::canPlaySound(juce::SynthesiserSound* sound)
 {
     return dynamic_cast<juce::SynthesiserSound*>(sound) != nullptr;
@@ -22,6 +23,10 @@ void SynthVoice::stopNote(float velocity, bool allowTailOff)
 
 }
 void SynthVoice::controllerMoved(int controllerNumber, int newControllerValue)
+{
+
+}
+void SynthVoice::pitchWheelMoved(int newPitchWheelValue)
 {
 
 }
