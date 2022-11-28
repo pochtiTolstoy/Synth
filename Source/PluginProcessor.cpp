@@ -19,7 +19,7 @@ TapSynthAudioProcessor::TapSynthAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ), apvts(*this, nullptr, "Parameters", createParams())
 #endif
 {
     synth.addSound(new SynthSound());
@@ -187,4 +187,20 @@ void TapSynthAudioProcessor::setStateInformation (const void* data, int sizeInBy
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new TapSynthAudioProcessor();
+}
+
+juce::AudioProcessorValueTreeState::ParameterLayout TapSynthAudioProcessor::createParams()
+{
+    // switch oscillators
+    // attack
+    // decay
+    // sustain
+    // release
+
+    std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
+
+    // osc select
+    params.push_back(std::make_unique<juce::AudioParameterChoice>("OSC", "Oscillator", juce::StringArray{ "Sine", "Saw", "Square" }, 0));
+
+    return { params.begin(), params.end() };
 }
