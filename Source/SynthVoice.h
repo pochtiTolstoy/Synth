@@ -26,6 +26,7 @@ public:
 private:
     juce::ADSR adsr;
     juce::ADSR::Parameters adsrParams;
+    juce::AudioBuffer<float> synthBuffer;
 
     juce::dsp::Oscillator<float> osc{ [](float x) { return std::sin(x); }, 200 };
     //juce::dsp::Oscillator<float> osc{ [](float x) { return x / juce::MathConstants<float>::pi; } }; //Saw wave
