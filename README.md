@@ -1,5 +1,6 @@
-Simple VST synthesizer plugin with JUCE framework
+# Simple VST synthesizer plugin with JUCE framework
 This synthesizer contains one oscillator, three wave types and ADSR parametres (attack, decay, sustain, release).
+
 ------------------------------------
 Build:
 1. Clone JUCE framework from: https://github.com/juce-framework/JUCE
